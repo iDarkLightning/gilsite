@@ -5,19 +5,22 @@ import {
   Box,
   Center,
   Container,
-  ContainerProps,
+  Text,
   BoxProps,
+  Divider,
 } from '@chakra-ui/react';
 import { graphql, Link, PageProps } from 'gatsby';
 import { ArrowBackIcon, IconProps } from '@chakra-ui/icons';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
+import { Helmet } from 'react-helmet';
 
 interface PageData {
   graphCmsArticle: {
     title: string;
     content: string;
     slug: string;
+    createdAt: string;
   };
 }
 
@@ -27,6 +30,13 @@ const Arrow = motion<IconProps>(ArrowBackIcon);
 const BlogPage = ({ data: { graphCmsArticle: data } }: PageProps<PageData>) => {
   return (
     <Center m="10" flexDirection="column">
+      <Helmet>
+        <title>{data.title}</title>
+        <meta
+          name="description"
+          content={data.content.substring(0, 100) + '...'}
+        />
+      </Helmet>
       <Container>
         <BackButton
           color="cyan.400"
@@ -55,6 +65,15 @@ const BlogPage = ({ data: { graphCmsArticle: data } }: PageProps<PageData>) => {
         <Heading size="2xl" my="3">
           {data.title}
         </Heading>
+        <Text>
+          Written{' '}
+          {new Date(data.createdAt).toLocaleDateString('en-us', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })}
+        </Text>
+        <Divider my="2" />
         <ReactMarkdown children={data.content} />
 
         <Footer />
@@ -69,6 +88,7 @@ export const pageQuery = graphql`
       title
       content
       slug
+      createdAt
     }
   }
 `;

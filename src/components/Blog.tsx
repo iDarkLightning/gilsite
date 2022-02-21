@@ -10,9 +10,6 @@ import { Link } from 'gatsby';
 import * as React from 'react';
 
 const Blog = ({ data }: { data: BlogCardProps[] }) => {
-  const { colorMode } = useColorMode();
-  const link = useColorModeValue('blue.500', 'blue.400');
-
   return (
     <>
       {data.map((v, i) => {

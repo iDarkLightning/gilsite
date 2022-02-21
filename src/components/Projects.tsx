@@ -52,6 +52,7 @@ function ProjectCard({ name, description, link, image }: Project) {
       >
         <Image
           src={image.url}
+          alt="Logo"
           height="80px"
           backgroundColor={backgroundColor}
           padding={padding}

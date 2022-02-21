@@ -36,6 +36,7 @@ const Links = () => {
       <Flex alignItems="center" mt="4">
         <StaticImage
           src="../images/instagram_logo.png"
+          alt="Instagram Logo"
           placeholder={null}
           width={30}
           height={30}
@@ -70,6 +71,7 @@ const Links = () => {
 const GitHubLogoLight = () => (
   <StaticImage
     src="../images/github_logo_light.png"
+    alt="GitHub Logo"
     placeholder={null}
     width={30}
     height={30}
@@ -79,6 +81,7 @@ const GitHubLogoLight = () => (
 const GitHubLogoDark = () => (
   <StaticImage
     src="../images/github_logo_dark.png"
+    alt="GitHub Logo"
     placeholder={null}
     width={30}
     height={30}
@@ -93,10 +96,10 @@ const DiscordLink = ({ link }: { link: string }) => {
     <Flex alignItems="center" mt="4">
       <StaticImage
         src="../images/discord_logo.png"
+        alt="Discord Logo"
         placeholder={null}
         width={30}
         height={30}
-        alt=""
       />
       <motion.div initial="rest" whileHover="hover">
         <Text

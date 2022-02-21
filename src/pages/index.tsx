@@ -116,7 +116,7 @@ const Header = () => (
 );
 
 export const pageQuery = graphql`
-  query AllArticles {
+  query AllArticlesAndProjects {
     allGraphCmsArticle {
       nodes {
         content
