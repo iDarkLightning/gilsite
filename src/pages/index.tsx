@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { graphql, Link, PageProps } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import {
   Box,
   Center,
@@ -8,10 +8,7 @@ import {
   Heading,
   Text,
   Divider,
-  ContainerProps,
 } from '@chakra-ui/layout';
-import { motion } from 'framer-motion';
-import { Button, useColorMode } from '@chakra-ui/react';
 import Links from '../components/Links';
 // @ts-ignore
 import * as styles from '../styles/index.module.css';
@@ -45,7 +42,6 @@ interface PageData {
   };
 }
 
-const AnimatedContainer = motion<ContainerProps>(Container);
 const IndexPage = ({
   data: {
     allGraphCmsArticle: { nodes: blogData },
@@ -74,7 +70,7 @@ const IndexPage = ({
         <Divider my="2" />
 
         {/* projects section */}
-        <Heading fontSize="3xl">Thing's I've Worked On</Heading>
+        <Heading fontSize="3xl">Things I've Worked On</Heading>
         <Projects data={projectData} />
 
         <Footer />

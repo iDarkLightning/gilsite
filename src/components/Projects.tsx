@@ -1,8 +1,6 @@
-import { CheckCircleIcon, ExternalLinkIcon } from '@chakra-ui/icons';
 import {
   Container,
   useColorModeValue,
-  useColorMode,
   Text,
   ContainerProps,
   Image,

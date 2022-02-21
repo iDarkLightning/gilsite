@@ -1,8 +1,6 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import {
-  useColorModeValue,
   useColorMode,
-  Box,
   Text,
   Button,
   Divider,
