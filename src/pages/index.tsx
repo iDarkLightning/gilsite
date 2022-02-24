@@ -10,14 +10,11 @@ import {
   Divider,
 } from '@chakra-ui/layout';
 import Links from '../components/Links';
-// @ts-ignore
-import * as styles from '../styles/index.module.css';
-// @ts-ignore
-import CatTypeGif from '../images/cat-type.gif';
 import { Helmet } from 'react-helmet';
 import Blog from '../components/Blog';
 import Projects from '../components/Projects';
 import Footer from '../components/Footer';
+import FancyAssLogo from '../components/FancyAssLogo';
 
 interface PageData {
   // blog posts
@@ -51,26 +48,20 @@ const IndexPage = ({
   return (
     <Center m="10">
       <Helmet>
-        <title>i'm gilbert</title>
+        <title>Gilbert's Portfolio or Something</title>
         <meta name="description" content="this is my website yes" />
       </Helmet>
 
       <Container width="600px" maxWidth="600px">
         <Header />
-        <Divider my="2" />
 
-        {/* links section */}
-        <Heading fontSize="3xl">Links</Heading>
+        <SectionDivider>Links</SectionDivider>
         <Links />
-        <Divider my="2" />
 
-        {/* blog section */}
-        <Heading fontSize="3xl">Blog</Heading>
+        <SectionDivider>Blog</SectionDivider>
         <Blog data={blogData} />
-        <Divider my="2" />
 
-        {/* projects section */}
-        <Heading fontSize="3xl">Things I've Worked On</Heading>
+        <SectionDivider>My Work</SectionDivider>
         <Projects data={projectData} />
 
         <Footer />
@@ -79,36 +70,35 @@ const IndexPage = ({
   );
 };
 
+const SectionDivider = ({ children }: { children: string }) => {
+  return (
+    <>
+      <Divider my="6" />
+      <Heading fontSize="3xl" mb="4">
+        {children}
+      </Heading>
+    </>
+  );
+};
+
 const Header = () => (
-  <Flex justifyContent="space-between" className={styles.headerContainer}>
-    <Box>
-      {/* left */}
-      <Heading>i'm gilbert</Heading>
-      <Text>
-        <br />⭐<strong>Accepting commissions</strong>
+  <Box>
+    <FancyAssLogo />
+    <Heading mt="5">Hello! I'm Gilbert</Heading>
+
+    <Text>
+      <br />⭐<strong>Accepting commissions</strong>
+    </Text>
+
+    <Flex alignItems="center" mt="4">
+      <Text mr="1" fontSize="2rem">
+        🏫
       </Text>
-
-      <Flex alignItems="center" mt="4">
-        <Text mr="1" fontSize="2rem">
-          🏫
-        </Text>
-        <Text mt="10px" fontSize="1.2rem">
-          Brooklyn Technical High School
-        </Text>
-      </Flex>
-    </Box>
-
-    {/* right */}
-    <img
-      src={CatTypeGif}
-      width={200}
-      height={200}
-      alt="cat tap tap tap"
-      style={{
-        borderRadius: 20,
-      }}
-    />
-  </Flex>
+      <Text mt="10px" fontSize="1.2rem">
+        Brooklyn Technical High School
+      </Text>
+    </Flex>
+  </Box>
 );
 
 export const pageQuery = graphql`
