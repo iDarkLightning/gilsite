@@ -170,6 +170,7 @@ const DiscordLink = ({ link }: { link: string }) => {
 };
 
 function isTouchDevice() {
+  if (!window) return false;
   return (
     'ontouchstart' in window ||
     navigator.maxTouchPoints > 0 ||

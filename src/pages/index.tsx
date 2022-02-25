@@ -54,6 +54,11 @@ const IndexPage = ({
       </Helmet>
 
       <Container width="600px" maxWidth="600px">
+        <noscript>
+          <Container backgroundColor="red.300" color="whiteAlpha.400">
+            Some functions of this site depends on JavaScript, please enable it.
+          </Container>
+        </noscript>
         <Header />
 
         <SectionDivider>Links</SectionDivider>
