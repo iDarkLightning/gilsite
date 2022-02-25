@@ -55,7 +55,7 @@ const Links = () => {
 
       <DiscordLink link={link} />
 
-      <Flex alignItems="center" mt="4">
+      <Flex alignItems="center" mt="3">
         <StaticImage
           src="../images/gmail_logo.png"
           alt="GMail Logo"
@@ -70,7 +70,7 @@ const Links = () => {
           href="mailto:giilbertpublic@gmail.com"
           color={link}
         >
-          Mail to me <ExternalLinkIcon />
+          E-Mail <ExternalLinkIcon />
         </Link>
       </Flex>
     </>
@@ -170,7 +170,7 @@ const DiscordLink = ({ link }: { link: string }) => {
 };
 
 function isTouchDevice() {
-  if (!window) return false;
+  if (typeof window === 'undefined') return false;
   return (
     'ontouchstart' in window ||
     navigator.maxTouchPoints > 0 ||
