@@ -13,7 +13,7 @@ const Blog = ({ data }: { data: BlogCardProps[] }) => {
   return (
     <>
       {data.map((v, i) => {
-        return <BlogCard {...v} />;
+        return <BlogCard {...v} key={i} />;
       })}
     </>
   );

@@ -55,15 +55,24 @@ const Links = () => {
 
       <DiscordLink link={link} />
 
-      <Link
-        href="mailto:giilbertpublic@gmail.com"
-        fontSize="1.2rem"
-        color={link}
-      >
-        <Text mt="5px">
+      <Flex alignItems="center" mt="4">
+        <StaticImage
+          src="../images/gmail_logo.png"
+          alt="GMail Logo"
+          placeholder={null}
+          width={30}
+          height={30}
+        />
+
+        <Link
+          fontSize="1.2rem"
+          ml="2"
+          href="mailto:giilbertpublic@gmail.com"
+          color={link}
+        >
           Mail to me <ExternalLinkIcon />
-        </Text>
-      </Link>
+        </Link>
+      </Flex>
     </>
   );
 };
@@ -121,7 +130,7 @@ const DiscordLink = ({ link }: { link: string }) => {
           <motion.span
             variants={{
               rest: {
-                opacity: 0,
+                opacity: !isTouchDevice() ? 0 : undefined,
               },
               hover: {
                 opacity: 1,
@@ -144,9 +153,14 @@ const DiscordLink = ({ link }: { link: string }) => {
                 />
               </>
             ) : (
-              <Text color="gray.500" display="inline-block">
+              <span
+                style={{
+                  color: '#aaa',
+                  display: 'inline-block',
+                }}
+              >
                 Click to copy
-              </Text>
+              </span>
             )}
           </motion.span>
         </Text>
@@ -154,5 +168,14 @@ const DiscordLink = ({ link }: { link: string }) => {
     </Flex>
   );
 };
+
+function isTouchDevice() {
+  return (
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    //@ts-ignore
+    navigator.msMaxTouchPoints > 0
+  );
+}
 
 export default Links;

@@ -12,8 +12,9 @@ import {
 import { graphql, Link, PageProps } from 'gatsby';
 import { ArrowBackIcon, IconProps } from '@chakra-ui/icons';
 import { motion } from 'framer-motion';
-import Footer from '../components/Footer';
+import { css } from '@emotion/react';
 import { Helmet } from 'react-helmet';
+import Footer from '../components/Footer';
 
 interface PageData {
   graphCmsArticle: {
@@ -29,7 +30,7 @@ const Arrow = motion<IconProps>(ArrowBackIcon);
 
 const BlogPage = ({ data: { graphCmsArticle: data } }: PageProps<PageData>) => {
   return (
-    <Center m="10" flexDirection="column">
+    <Center m="10" flexDirection="column" css={pageContainer}>
       <Helmet>
         <title>{data.title}</title>
         <meta
@@ -73,7 +74,9 @@ const BlogPage = ({ data: { graphCmsArticle: data } }: PageProps<PageData>) => {
             year: 'numeric',
           })}
         </Text>
-        <Divider my="2" />
+
+        <Divider my="4" />
+
         <ReactMarkdown children={data.content} />
 
         <Footer />
@@ -81,6 +84,12 @@ const BlogPage = ({ data: { graphCmsArticle: data } }: PageProps<PageData>) => {
     </Center>
   );
 };
+
+const pageContainer = css`
+  @media screen and (max-width: 600px) {
+    margin: 2rem 0.1rem;
+  }
+`;
 
 export const pageQuery = graphql`
   query BlogPageQuery($slug: String!) {

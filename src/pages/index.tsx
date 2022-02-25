@@ -9,6 +9,7 @@ import {
   Text,
   Divider,
 } from '@chakra-ui/layout';
+import { css } from '@emotion/react';
 import Links from '../components/Links';
 import { Helmet } from 'react-helmet';
 import Blog from '../components/Blog';
@@ -46,7 +47,7 @@ const IndexPage = ({
   },
 }: PageProps<PageData>) => {
   return (
-    <Center m="10">
+    <Center m="10" css={pageContainer}>
       <Helmet>
         <title>Gilbert's Portfolio or Something</title>
         <meta name="description" content="this is my website yes" />
@@ -100,6 +101,12 @@ const Header = () => (
     </Flex>
   </Box>
 );
+
+const pageContainer = css`
+  @media screen and (max-width: 600px) {
+    margin: 2rem 0.1rem;
+  }
+`;
 
 export const pageQuery = graphql`
   query AllArticlesAndProjects {
