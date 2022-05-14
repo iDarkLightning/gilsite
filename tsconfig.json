@@ -5,6 +5,17 @@
       "ES6"
     ],
     "strict": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "src",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "paths": {
+      "@components/*": [
+        "components/*"
+      ],
+      "@views/*": [
+        "views/*"
+      ]
+    }
   }
 }

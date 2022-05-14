@@ -1,15 +1,19 @@
+const path = require('path');
+
 module.exports = {
   plugins: [
-    {
-      resolve: `gatsby-source-graphcms`,
-      options: {
-        endpoint: `https://api-us-east-1.graphcms.com/v2/ckygda5ep1bzt01xg791dbsmo/master`,
-      },
-    },
-    '@chakra-ui/gatsby-plugin',
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-image',
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        '@components': path.join(__dirname, 'src/components'),
+        '@styles': path.join(__dirname, 'src/styles'),
+        '@views': path.join(__dirname, 'src/views'),
+      },
+    },
+    'gatsby-plugin-sass',
   ],
 };
