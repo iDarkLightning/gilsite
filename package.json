@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@types/styled-components": "^5.1.25",
-    "framer-motion": "^5.6.0",
+    "framer-motion": "^6.3.3",
     "gatsby": "^4.5.2",
     "gatsby-plugin-image": "^2.5.1",
     "gatsby-plugin-react-helmet": "^5.7.0",

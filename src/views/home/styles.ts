@@ -6,10 +6,11 @@ export const PageContainer = styled.div`
   justify-content: center;
 
   main {
-    width: 700px;
+    width: 70vw;
+    max-width: 700px;
   }
 `;
 
 export const Divider = styled.div`
-  margin-bottom: 100vh;
+  margin-bottom: 150vh;
 `;
