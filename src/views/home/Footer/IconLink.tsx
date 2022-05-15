@@ -6,7 +6,7 @@ export const IconLink: React.FC<{
   icon: IconType;
 }> = ({ url, icon: Icon }) => {
   return (
-    <a href={url}>
+    <a href={url} target="_blank" rel="noopener noreferrer">
       <Icon size="40" />
     </a>
   );
