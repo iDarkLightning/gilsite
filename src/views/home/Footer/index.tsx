@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FooterContainer, IconsContainer } from './styles';
+import { Email, FooterContainer, IconsContainer } from './styles';
 import { FaGithub, FaInstagram } from 'react-icons/fa';
 import { IconLink } from './IconLink';
 
@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   return (
     <FooterContainer>
       <a href="mailto:giilbertpublic@gmail.com">
-        <h3>giilbertpublic@gmail.com</h3>
+        <Email>giilbertpublic@gmail.com</Email>
       </a>
 
       <IconsContainer>
