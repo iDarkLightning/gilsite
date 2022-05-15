@@ -39,7 +39,9 @@
   "devDependencies": {
     "@types/react-dom": "^18.0.1",
     "@types/react-helmet": "^6.1.5",
+    "babel-plugin-styled-components": "^2.0.7",
     "gatsby-plugin-sass": "^5.12.1",
+    "gatsby-plugin-styled-components": "^5.14.0",
     "sass": "^1.50.0",
     "typescript": "^4.5.4"
   }
