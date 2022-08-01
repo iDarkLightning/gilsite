@@ -3,10 +3,10 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
 const COWSAY = `
- ____________________________________
-/ this site is very cool, would come \\
-\\ again                             /
- ------------------------------------
+ ______________________________________
+/ gilbert's site butchered beautifully \\
+\\ by Nirjhor                          //
+ --------------------------------------
         \\   ^__^
          \\  (oo)\\_______
             (__)\\       )\\/\\
